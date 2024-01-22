@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         with(binding) {
             viewpager.adapter = TabAdapter(this@MainActivity.supportFragmentManager, lifecycle)
+            viewpager.isUserInputEnabled = false
             TabLayoutMediator(tlTab, viewpager) { tab, position ->
                 tab.text = tabList[position]
             }.attach()
